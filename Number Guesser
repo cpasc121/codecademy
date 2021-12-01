@@ -17,8 +17,8 @@ const compareGuesses = (userGuess,computerGuess,targetNumber) => {
   if (Math.abs(targetNumber - userGuess) > Math.abs(targetNumber - computerGuess)){return false}
 }
 const updateScore = () => {
-  if (compareGuesses === true){humanScore ++}
-  if (compareGuesses === false) {computerScore ++}
+  if (compareGuesses() === true){humanScore ++}
+  else {computerScore ++}
 }
 const advanceRound = () => {
   currentRoundNumber ++
