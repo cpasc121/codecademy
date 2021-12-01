@@ -14,11 +14,11 @@ let targetNumber = generateTarget()
 const compareGuesses = (userGuess,computerGuess,targetNumber) => {
   
   if (Math.abs(targetNumber - userGuess) <= Math.abs(targetNumber - computerGuess)){return true}
-  else {return false}
+  if (Math.abs(targetNumber - userGuess) > Math.abs(targetNumber - computerGuess)){return false}
 }
 const updateScore = () => {
   if (compareGuesses === true){humanScore ++}
-  else {computerScore ++}
+  if (compareGuesses === false) {computerScore ++}
 }
 const advanceRound = () => {
   currentRoundNumber ++
